@@ -11,13 +11,13 @@ categories = ["external-ffi-bindings", "graphics", "no-std", "rendering::graphic
 
 [dependencies]
 # Enables `bytemuck::Zeroable` on the `GlFns` struct.
-bytemuck = { version = "1.2", optional = true }
-
-# Logging features below use this crate (otherwise println / eprintln)
-log = { version = "0.4", optional = true }
+bytemuck = { version = "1", optional = true }
 
 # Uses this for C types (otherwise std::os::raw)
 chlorine = { version = "1", optional = true }
+
+# Logging features below use this crate (otherwise println / eprintln)
+log = { version = "0.4", optional = true }
 
 [features]
 default = []
