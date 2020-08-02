@@ -1,4 +1,4 @@
 cargo install phosphorus
 mkdir target
-phosphorus ../gl.xml gl 4 6 core GL_EXT_texture_filter_anisotropic >target/lib.rs
-rustfmt target/lib.rs
+phosphorus ../gl.xml gl 4 6 core GL_ARB_debug_output,GL_KHR_debug,GL_ARB_texture_filter_anisotropic >src/lib.rs
+cargo fmt
