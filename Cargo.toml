@@ -60,4 +60,5 @@ name = "fermium_struct"
 required-features = ["struct_loader"]
 
 [package.metadata.docs.rs]
-features = ["global_loader", "struct_loader"]
+all-features = true
+rustdoc-args = ["--cfg","docs_rs"]
