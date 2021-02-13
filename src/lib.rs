@@ -8,6 +8,13 @@
 //! Construct a [`GlFns`] using an appropriate "gl_get_proc_address" function
 //! and then call its methods.
 //!
+//! ## Extensions
+//! 
+//! * [GL_ARB_texture_filter_anisotropic](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_texture_filter_anisotropic.txt)
+//! * [GL_ARB_bindless_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_bindless_texture.txt)
+//! * [GL_ARB_sparse_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_sparse_texture.txt)
+//! * [GL_ARB_pipeline_statistics_query](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_pipeline_statistics_query.txt)
+//!
 //! ## `gl_get_proc_address`
 //!
 //! GL must generally be dynamically loaded at runtime. This is done via a
@@ -37,13 +44,6 @@
 //!
 //! [glutin-gpa]:
 //! (https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address)
-//!
-//! ## Extensions
-//! 
-//! * GL_ARB_texture_filter_anisotropic
-//! * GL_ARB_bindless_texture
-//! * GL_ARB_sparse_texture
-//! * GL_ARB_pipeline_statistics_query
 //! 
 //! ## Inlining
 //!
