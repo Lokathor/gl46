@@ -3,24 +3,26 @@
 
 //! Makes the OpenGL 4.6 Core API (plus some extensions) available for use.
 //!
-//! The crate's interface is provided a "struct" style loader.
-//!
-//! Construct a [`GlFns`] using an appropriate "gl_get_proc_address" function
-//! and then call its methods.
+//! The crate's interface is provided as a "struct" style loader. Construct a
+//! [`GlFns`] using an appropriate "gl_get_proc_address" function and then call
+//! its methods.
 //!
 //! ## Extensions
-//! 
+//!
 //! * [GL_ARB_texture_filter_anisotropic](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_texture_filter_anisotropic.txt)
 //! * [GL_ARB_bindless_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_bindless_texture.txt)
 //! * [GL_ARB_sparse_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_sparse_texture.txt)
 //! * [GL_ARB_pipeline_statistics_query](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_pipeline_statistics_query.txt)
-//! 
+//!
 //! ## Cargo Features
-//! 
-//! * `track_caller`: Enables the [track_caller][track_caller_reference] attribute on any function that can panic.
-//!   Specifically, the extension functions of the struct loader might not be loaded, and if you call them when they're not loaded you'll get a panic.
-//! 
-//! [track_caller_reference]: (https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute)
+//!
+//! * `track_caller`: Enables the [track_caller][track_caller_reference]
+//!   attribute on any function that can panic. Specifically, the extension
+//!   functions of the struct loader might not be loaded, and if you call them
+//!   when they're not loaded you'll get a panic.
+//!
+//! [track_caller_reference]:
+//! (https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute)
 //!
 //! ## `gl_get_proc_address`
 //!
@@ -51,12 +53,11 @@
 //!
 //! [glutin-gpa]:
 //! (https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address)
-//! 
+//!
 //! ## Inlining
 //!
-//! This crate does **not** use the `#[inline]` attribute.
-//! If you want full inlining just turn on Link-Time Optimization in your cargo
-//! profile:
+//! This crate does **not** use the `#[inline]` attribute. If you want full
+//! inlining just turn on Link-Time Optimization in your cargo profile:
 //!
 //! ```toml
 //! [profile.release]
