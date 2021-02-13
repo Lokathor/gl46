@@ -14,6 +14,13 @@
 //! * [GL_ARB_bindless_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_bindless_texture.txt)
 //! * [GL_ARB_sparse_texture](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_sparse_texture.txt)
 //! * [GL_ARB_pipeline_statistics_query](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_pipeline_statistics_query.txt)
+//! 
+//! ## Cargo Features
+//! 
+//! * `track_caller`: Enables the [track_caller][track_caller_reference] attribute on any function that can panic.
+//!   Specifically, the extension functions of the struct loader might not be loaded, and if you call them when they're not loaded you'll get a panic.
+//! 
+//! [track_caller_reference]: (https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute)
 //!
 //! ## `gl_get_proc_address`
 //!
