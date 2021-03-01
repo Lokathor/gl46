@@ -3,7 +3,7 @@
 [![crates.io](https://img.shields.io/crates/v/gl46.svg)](https://crates.io/crates/gl46)
 [![docs.rs](https://docs.rs/gl46/badge.svg)](https://docs.rs/gl46/)
 
-# A Generated Crate
+# This Is A Generated Crate
 
 This crate is hand-tuned output from running one of the scripts in the [phosphorus](https://github.com/Lokathor/phosphorus) repo.
 
