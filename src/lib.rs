@@ -21,7 +21,8 @@
 //!   functions of the struct loader might not be loaded, and if you call them
 //!   when they're not loaded you'll get a panic.
 //!
-//! [track_caller_reference]: https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute
+//! [track_caller_reference]:
+//! https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute
 //!
 //! ## `gl_get_proc_address`
 //!
@@ -41,15 +42,30 @@
 //!   the equivalent function within your SDL2 bindings.
 //! * With [glutin][glutin] you'd call [Context::get_proc_address][glutin-gpa]
 //!
-//! [wglGetProcAddress]: https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglgetprocaddress
+//! The function to create a `GLFns` takes a `&dyn Fn(*const u8) -> *const
+//! c_void`. Note the `&dyn` part on the front. In addition to passing a closure
+//! to the constructor (`|x| { ... }`), you generally need to prefix your
+//! closure with a `&` to make it be a `&dyn` value. Like this:
+//! ```no_run
+//! use gl46::*;
+//! # let SDL_GL_GetProcAddress: fn(*const u8) -> *mut core::ffi::c_void = unimplemented!();
+//! let gl = unsafe { GlFns::load_from(&|u8_ptr| SDL_GL_GetProcAddress(u8_ptr.cast())).unwrap() };
+//! ```
+//! It might seem a little silly, but it genuinely helps keep re-compile times
+//! down, and it's just one extra `&` to write.
 //!
-//! [GetProcAddress]: https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
+//! [wglGetProcAddress]:
+//! https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglgetprocaddress
+//!
+//! [GetProcAddress]:
+//! https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
 //!
 //! [SDL_GL_GetProcAddress]: https://wiki.libsdl.org/SDL_GL_GetProcAddress
 //!
 //! [glutin]: https://docs.rs/glutin/0.26.0/glutin
 //!
-//! [glutin-gpa]: https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address
+//! [glutin-gpa]:
+//! https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address
 //!
 //! ## Inlining
 //!
