@@ -66,9 +66,6 @@
 
 use chlorine::*;
 
-pub mod gl_command_types;
-pub(crate) use gl_command_types::*;
-
 pub mod gl_core_types;
 pub use gl_core_types::*;
 
