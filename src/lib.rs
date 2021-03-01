@@ -21,8 +21,7 @@
 //!   functions of the struct loader might not be loaded, and if you call them
 //!   when they're not loaded you'll get a panic.
 //!
-//! [track_caller_reference]:
-//! (https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute)
+//! [track_caller_reference]: https://doc.rust-lang.org/reference/attributes/codegen.html#the-track_caller-attribute
 //!
 //! ## `gl_get_proc_address`
 //!
@@ -42,17 +41,15 @@
 //!   the equivalent function within your SDL2 bindings.
 //! * With [glutin][glutin] you'd call [Context::get_proc_address][glutin-gpa]
 //!
-//! [wglGetProcAddress]:
-//! (https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglgetprocaddress)
+//! [wglGetProcAddress]: https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglgetprocaddress
 //!
-//! [GetProcAddress]:
-//! (https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress)
-//! [SDL_GL_GetProcAddress]: (https://wiki.libsdl.org/SDL_GL_GetProcAddress)
+//! [GetProcAddress]: https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
 //!
-//! [glutin]: (https://docs.rs/glutin/0.26.0/glutin)
+//! [SDL_GL_GetProcAddress]: https://wiki.libsdl.org/SDL_GL_GetProcAddress
 //!
-//! [glutin-gpa]:
-//! (https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address)
+//! [glutin]: https://docs.rs/glutin/0.26.0/glutin
+//!
+//! [glutin-gpa]: https://docs.rs/glutin/0.26.0/glutin/struct.Context.html#method.get_proc_address
 //!
 //! ## Inlining
 //!
@@ -66,6 +63,8 @@
 
 use chlorine::*;
 
+// TODO: make the gl_command_types module pub(crate), but it's a breaking
+// change.
 pub mod gl_command_types;
 pub(crate) use gl_command_types::*;
 
