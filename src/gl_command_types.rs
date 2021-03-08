@@ -526,9 +526,9 @@ pub(crate) type glGetShaderSource_t = unsafe extern "system" fn(shader: GLuint, 
 
 pub(crate) type glGetShaderiv_t = unsafe extern "system" fn(shader: GLuint, pname: ShaderParameterName, params: *mut GLint);
 
-pub(crate) type glGetString_t = unsafe extern "system" fn(name: StringName) -> GLubyte;
+pub(crate) type glGetString_t = unsafe extern "system" fn(name: StringName) -> *const GLubyte;
 
-pub(crate) type glGetStringi_t = unsafe extern "system" fn(name: StringName, index: GLuint) -> GLubyte;
+pub(crate) type glGetStringi_t = unsafe extern "system" fn(name: StringName, index: GLuint) -> *const GLubyte;
 
 pub(crate) type glGetSubroutineIndex_t = unsafe extern "system" fn(program: GLuint, shadertype: ShaderType, name: *const GLchar) -> GLuint;
 
